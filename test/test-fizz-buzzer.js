@@ -1,32 +1,10 @@
-const should = require('chai').should();
-
-const fizzBuzzer = require('../fizzBuzzer');
-
+const should      = require('chai').should();
+const fizzBuzzer  = require('../fizzBuzzer');
 
 // unit tests for our `fizz-buzzer` function
 describe('fizzBuzzer', function() {
 
-  
-/*
-  // test the normal case
-  it('should divide a number', function() {
-    // range of normal inputs, including
-    // notable cases like negative answers
-    const normalCases = [
-      {num: 15, expected: 0},
-      {num: 5, expected: 0},
-      {num: 3, expected: 0}
-    ];
-    // for each input (num), `fizzBuzzer` should
-    // return 'fizz-buzz', 'fizz', or 'buzz'
-    normalCases.forEach(function(input) {
-      const answer = fizzBuzzer(input.num);
-      answer.should.equal(input.expected);
-    });
-  });
-*/
-
-//return 'fizz-buzz' if num is divisible by 5
+  //return 'fizz-buzz' if num is divisible by 5
   it('should return fizz-buzz is divisible by 15', function (){
     const divisibleBy15 = [15, 30, 45, 60];
     divisibleBy15.forEach(function(input) {
@@ -63,6 +41,7 @@ describe('fizzBuzzer', function() {
     const badInputs = ['15', 'fifteen', '5', true,'yes'];
     badInputs.forEach(function(input) {
       (function() {fizzBuzzer(input)}).should.throw(Error);
-    }); //badInputs.forEach
+    }); //badInputs
   }); //it (error for bad inputs)
+
 }); //fizzBuzzer function
