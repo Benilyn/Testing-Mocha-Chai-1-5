@@ -4,7 +4,7 @@ const fizzBuzzer  = require('../fizzBuzzer');
 // unit tests for our `fizz-buzzer` function
 describe('fizzBuzzer', function() {
 
-  //return 'fizz-buzz' if num is divisible by 5
+  //return 'fizz-buzz' if num is divisible by 15
   it('should return fizz-buzz is divisible by 15', function (){
     const divisibleBy15 = [15, 30, 45, 60];
     divisibleBy15.forEach(function(input) {
@@ -14,7 +14,7 @@ describe('fizzBuzzer', function() {
 
   //return 'buzz' if num is divisible by 5
   it('should return buzz is divisible by 5', function (){
-    const divisibleBy5 = [5, 10, 15, 20];
+    const divisibleBy5 = [5, 10, 25, 20];
     divisibleBy5.forEach(function(input) {
       fizzBuzzer(input).should.equal('buzz')
     }) //divisibleBy5
