@@ -12,29 +12,30 @@ describe('fizzBuzzer', function() {
     // notable cases like negative answers
     const normalCases = [
       {num: 15, expected: 0},
-      {num: 15, expected: 3},
-      {num: 15, expected: 5}
+      {num: 5, expected: 0},
+      {num: 3, expected: 0}
     ];
-    // for each set of inputs (a, b), `fizzBuzzer` should
-    // produce the expected value
+    // for each input (num), `fizzBuzzer` should
+    // return 'fizz-buzz', 'fizz', or 'buzz'
     normalCases.forEach(function(input) {
       const answer = fizzBuzzer(input.num);
       answer.should.equal(input.expected);
     });
   });
 
-  it('should raise error if args not numbers', function() {
-    // range of bad inputs 
-    const badInputs = [
-      ['15'],
-      ['fifteen'],
-      ['5']
-    ];
-    // prove that an error is raised for bad inputs
+  //return number if not divisible by 15, 5 or 3
+  it('should return num if not divisible by 15, 5 or 3', function(){
+    const notDivisible = [2, 7, 11, 13];
+    notDivisible.forEach(function(input){
+      fizzBuzzer(input).should.equal(input)
+    }); //notDivisible 
+  }); //return num
+
+  // prove that an error is raised for bad inputs
+  it('should raise error if input is not numbers', function() {
+    const badInputs = ['15', 'fifteen', '5', true,'yes'];
     badInputs.forEach(function(input) {
-      (function() {
-          fizzBuzzer(input)
-      }).should.throw(Error);
-    });
-  });
-});
+      (function() {fizzBuzzer(input)}).should.throw(Error);
+    }); //badInputs.forEach
+  }); //it (error for bad inputs)
+}); //fizzBuzzer function
